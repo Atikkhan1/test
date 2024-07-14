@@ -15,12 +15,12 @@ export async function GET() {
         }
         }
     )
-    await transporter.sendMail({
+    let a = await transporter.sendMail({
         from: 'wavecart.shop@gmail.com', // sender address
         to: "khanarbajpathan057@gmail.com", // list of receivers
         subject: "wavecart verification code", // Subject line
         text: `thank you for chosing our website and giving your time , this is your verification code`,
         html:`<h1>thank you for chosing our website and giving your time , this is your verification code : <h2>${otp}</h2></h1>`
       })
-return new Response(JSON.stringify("sent"))
+return new Response(JSON.stringify(a))
 }
