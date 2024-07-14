@@ -5,8 +5,12 @@ import { useState } from "react";
 export default function Home() {
   const [msg,setMsg] = useState('')
   async function fetchEmail() {
-    let res = await fetch('/api/send')
-    const getres = await res.json();
+    let res = await fetch('/api/send',{
+      headers:{
+        "Content-Type":"application/json"
+      }
+    })
+    let getres = await res.text()
     setMsg(getres)
   }
   

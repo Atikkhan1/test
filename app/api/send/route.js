@@ -22,5 +22,6 @@ export async function GET() {
         text: `thank you for chosing our website and giving your time , this is your verification code`,
         html:`<h1>thank you for chosing our website and giving your time , this is your verification code : <h2>${otp}</h2></h1>`
       })
+    //   console.log(a)
 return new Response(JSON.stringify(a))
 }
